@@ -50,7 +50,7 @@ function loadPosts(){
                     $html .= '<p>' . get_the_excerpt() . '</p>';
                 endif;
                 $html .= '<div class="btn-wrapper">
-                            <a href="' . esc_url(get_the_permalink(get_the_ID())) . '" class="btn-global primary-color">' . __('Read More', VAVIA_DOMAIN) . '</a>
+                            <a href="' . esc_url(get_the_permalink(get_the_ID())) . '" class="btn-global primary-color">' . __('Read More', VV_DOMAIN) . '</a>
                         </div>
                     </div>
                 </div>';
@@ -174,9 +174,9 @@ function getContactResponsePopup( $form_id, $is_preview ): string
                        <img src="'.THEME_ASSETS_URL."/branding/img/logo-active.svg".'" class="response-icon" alt="poup-icon">
                    </div>
                    <div class="popup-content">
-                        <h2 class="heading-border response-heading text-left">'.__("Success",VAVIA_DOMAIN).'</h2>
+                        <h2 class="heading-border response-heading text-left">'.__("Success",VV_DOMAIN).'</h2>
                         <p class="response-msg"></p>
-                        <a href="#0" class="btn-global" data-dismiss="modal">'.__("Close",VAVIA_DOMAIN).'</a>
+                        <a href="#0" class="btn-global" data-dismiss="modal">'.__("Close",VV_DOMAIN).'</a>
                    </div>
                 </div>
             </div>
@@ -198,7 +198,7 @@ function getOrderFormPopup()
                 </div>
                 <div class="popup-content-wrapper bg-white page-template-template-contact">
                    <div id="orderNowFormWrapper" class="popup-content contact-section bg-white">
-                   <h2 class="heading-border text-left hide-on-submit">'.__("Reserve A Dumpster",VAVIA_DOMAIN).'</h2>
+                   <h2 class="heading-border text-left hide-on-submit">'.__("Reserve A Dumpster",VV_DOMAIN).'</h2>
                        '.do_shortcode('[ninja_form id=4]').'
                    </div>
                 </div>
@@ -258,8 +258,8 @@ function prepareXML($slugs,$isdefault=true){
 }
 
 
-add_filter ( 'wpseo_sitemap_index' , 'vavia_add_resource_pagination_sitemap_to_sitemap_index' );
-function vavia_add_resource_pagination_sitemap_to_sitemap_index(){
+add_filter ( 'wpseo_sitemap_index' , 'vv_add_resource_pagination_sitemap_to_sitemap_index' );
+function vv_add_resource_pagination_sitemap_to_sitemap_index(){
     global $wpseo_sitemaps;
     $date = date('c');
 
@@ -272,13 +272,13 @@ function vavia_add_resource_pagination_sitemap_to_sitemap_index(){
 }
 
 //Add resource page pagination to sitemap
-add_action( 'init', 'vavia_register_resource_pagination_sitemap', 99 );
-function vavia_register_resource_pagination_sitemap() {
+add_action( 'init', 'vv_register_resource_pagination_sitemap', 99 );
+function vv_register_resource_pagination_sitemap() {
     global $wpseo_sitemaps;
-    $wpseo_sitemaps->register_sitemap( 'resources-pagination', 'vavia_generate_pagination_sitemap' );
+    $wpseo_sitemaps->register_sitemap( 'resources-pagination', 'vv_generate_pagination_sitemap' );
 }
 
-function vavia_generate_pagination_sitemap()
+function vv_generate_pagination_sitemap()
 {
     global $wpseo_sitemaps;
     $resourceQuery = resourceQuery(1, 8)->max_num_pages;
@@ -405,7 +405,7 @@ function selectRenderedOptions($options, $settings)
 // add previous button before submit button
 add_filter('ninja_forms_display_before_field_key_submit_1654530155562','addPrevButton',10,1);
 function addPrevButton($before){
-    $before = '<button class="btn-global nf-previous">'.__('Previous',VAVIA_DOMAIN).'</button>';
+    $before = '<button class="btn-global nf-previous">'.__('Previous',VV_DOMAIN).'</button>';
     return $before;
 }
 

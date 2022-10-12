@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 	imageMin = require('gulp-imagemin'),
 	browserSync = require('browser-sync').create();
 
-var devURL = 'http://harbingervavia.test';
+var devURL = 'http://harbingervv.test';
 
 var paths = {
     build: {
