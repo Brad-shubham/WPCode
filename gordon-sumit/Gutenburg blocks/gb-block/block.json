@@ -1,0 +1,9 @@
+{
+  "apiVersion": 2,
+  "title": "TestBlock",
+  "name": "sumit/sumit1",
+  "category": "layout",
+  "icon": "universal-access-alt",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./build/index.css"
+}

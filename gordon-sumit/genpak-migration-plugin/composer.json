@@ -1,0 +1,12 @@
+{
+    "name": "andyaayush/genpak-migration",
+    "authors": [
+        {
+            "name": "Andy Aayush",
+            "email": "andy.aayush@ithands.biz"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^5.8"
+    }
+}

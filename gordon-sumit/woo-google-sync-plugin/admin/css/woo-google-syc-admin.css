@@ -1,0 +1,128 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+.sync-elem {
+    display: none;
+}
+
+.woo-gc-syc-main {
+    text-align: center;
+}
+
+#wcgs_progressbar {
+    background-color: #faf7f7;
+    /*border-radius: 13px;*/ /* (height of inner div) / 2 + padding */
+    padding: 3px;
+    display: none;
+    margin: 13px;
+}
+
+#wcgs_progressbar > div.pb-run {
+    background-color: #14831d;
+    width: 100%; /* Adjust with JavaScript */
+    height: 20px;
+    /*border-radius: 10px;*/
+    color: #fff;
+}
+
+.sync-opt-msg {
+    font-size: 15px;
+    font-weight: 500;
+    color: green;
+}
+.response-error {
+    background: #ffffff;
+    text-align: left;
+    margin: 18px;
+    overflow-x: auto;
+    padding: 10px;
+    display: none;
+    transition: opacity 1s;
+    position: relative;
+}
+
+.response-error:before {
+    content: '';
+    position: absolute;
+    height: 93%;
+    width: 10px;
+    background-color: orangered;
+}
+.response-error pre {
+    margin-left: 18px;
+}
+
+/**** tooltip strat ****/
+.btn-tooltip {
+    position: relative;
+    font-style: normal;
+}
+
+/**top tooltip**/
+.btn-tooltip .tooltip-top,
+.btn-tooltip .tooltip-bottom  {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display:block;
+    visibility: hidden;
+    position: absolute;
+    width: auto;
+    /*max-width: 300px;*/
+    min-width: 115px;
+    background-color: #000000;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 9px;
+    z-index: 1;
+    left: 50%;
+    opacity:0;
+    font-size:14px;
+    /*line-height:1.4;*/
+    line-break:auto;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: #ffffff;
+    -webkit-box-shadow:8px 8px 10px 0 rgb(0,0,0,0.14), -2px -2px 5px rgb(0,0,0,0.1);
+    box-shadow:8px 8px 10px 0 rgb(0,0,0,0.14), -2px -2px 5px rgb(0,0,0,0.1);
+}
+
+.btn-tooltip .tooltip-top{
+    bottom: calc(110% + 4px);
+}
+
+.btn-tooltip .tooltip-top::after,
+.btn-tooltip .tooltip-bottom::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    z-index: 0;
+    -webkit-box-shadow: 8px 8px 10px 0 rgb(0 0 0 / 10%);
+    box-shadow: 8px 8px 10px 0 rgb(0 0 0 / 10%);
+}
+
+.btn-tooltip .tooltip-top::after{
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+    top: calc(100% - 5px);
+}
+
+/**bottom tooltip**/
+.btn-tooltip .tooltip-bottom{
+    top: calc(110% + 4px);
+}
+
+.btn-tooltip .tooltip-bottom::after {
+    -webkit-transform: translateX(-50%) rotate(-135deg);
+    transform: translateX(-50%) rotate(-135deg);
+    top: -5px;
+}
+
+.btn-tooltip:hover .tooltip-top,
+.btn-tooltip:hover .tooltip-bottom {
+    visibility: visible;
+    opacity:0.9;
+}
